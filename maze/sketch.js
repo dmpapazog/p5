@@ -9,7 +9,7 @@ var backB = false;
 
 function setup() {
 	// frameRate(7);
-	createCanvas(windowWidth, windowHeight);
+	createCanvas(400, 400);
 	cols = floor(width / w);
 	rows = floor(height / w);
 
