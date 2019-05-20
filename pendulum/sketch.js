@@ -15,7 +15,7 @@ let cx, cy
 let buffer
 
 function setup () {
-  createCanvas(400, 400)
+  createCanvas(windowWidth, windowHeight)
 
   a1 = PI
   a2 = PI / 2
