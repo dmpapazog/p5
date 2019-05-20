@@ -1,0 +1,12 @@
+{
+  "name": "p5-project",
+  "version": "1.0.0",
+  "description": "My p5 project sketches.",
+  "main": "sketch.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint-config-p5js": "^1.0.1"
+  }
+}
