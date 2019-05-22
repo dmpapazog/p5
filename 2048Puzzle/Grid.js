@@ -7,7 +7,9 @@ class Grid
         this.size = size;
         this.grid = [];
         this.previous = [];
+        this.previousScore = 0;
         this.reverse = false;
+        this.score = 0;
 
         for (let i = 0; i < rows; i++) {
             this.grid[i] = [];
@@ -86,8 +88,10 @@ class Grid
         for (let i = 0; i < this.rows; i++) {
             for (let j = 0; j < this.cols; j++) {
                 this.previous[i][j] = this.grid[i][j];
+                
             }
         }
+        this.previousScore = this.score;
 
         let flagSwap = false;
         let flagMerge = false;
@@ -122,7 +126,6 @@ class Grid
                         while (tempI < this.rows - 1 && this.grid[tempI + 1][j] === 0) {
                             tempI++;
                             flagSwap = true;
-                            console.log("down");
                         }
                         this.swap(i, j, tempI, j);
                         if (!flagMerge) {
@@ -195,6 +198,7 @@ class Grid
         if (i2 >= 0 && i2 < this.rows && j2 >= 0 && j2 < this.cols && this.grid[i1][j1] === this.grid[i2][j2]) {
             this.grid[i2][j2] *= 2;
             this.grid[i1][j1] = 0;
+            this.score += this.grid[i2][j2];
             return true;
         } else {
             return false;
@@ -210,7 +214,32 @@ class Grid
                     
                 }
             }
+            this.score = this.previousScore;
             this.reverse = false;
         }
+    }
+
+    isGameOver()
+    {
+        for (let i = 0; i < this.rows; i++) {
+            for (let j = 0; j < this.cols; j++) {
+                if (this.grid[i][j] === 0) {
+                    return false;
+                }
+                if (i > 0 && this.grid[i][j] === this.grid[i - 1][j]) {
+                    return false;
+                }
+                if (i < this.rows - 1 && this.grid[i][j] === this.grid[i + 1][j]) {
+                    return false;
+                }
+                if (j > 0 && this.grid[i][j] === this.grid[i][j - 1]) {
+                    return false;
+                }
+                if (j < this.cols - 1 && this.grid[i][j] === this.grid[i][j + 1]) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }
