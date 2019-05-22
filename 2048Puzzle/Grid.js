@@ -56,7 +56,7 @@ class Grid
         if (options.length > 0) {
             let randomPos = random(options);
             let      rand = random(1);
-            this.grid[randomPos.x][randomPos.y] = rand > 0.7 ? 4 : 2;
+            this.grid[randomPos.x][randomPos.y] = rand > 0.9 ? 4 : 2;
         }
     }
 
