@@ -3,6 +3,8 @@
   "projects": [
     "pendulum",
     "helloWorld",
-    "maze"
+    "maze",
+    "Rubik",
+    "2048Puzzle"
   ]
 }

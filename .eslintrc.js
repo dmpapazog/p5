@@ -18,6 +18,6 @@ module.exports = {
     },
     "rules": {
         "no-console": "off",
-        "no-unused-vars": ["error", { "varsIgnorePattern": "setup|draw"} ]
+        "no-unused-vars": ["error", { "varsIgnorePattern": "setup|draw|keyPressed"} ]
     }
 };
